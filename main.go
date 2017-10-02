@@ -23,11 +23,7 @@ func main() {
 //MessageReceived :Callback to handle when message received.
 func MessageReceived(event Event, opts MessageOpts, msg ReceivedMessage) {
 	// log.Println("event:", event, " opt:", opts, " msg:", msg)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	resp, err := mess.SendSimpleMessage(opts.Sender.ID, fmt.Sprintf("你好,%s",msg.Text))
+	resp, err := mess.SendSimpleMessage(opts.Sender.ID, fmt.Sprintf("你好,%s", msg.Text))
 	if err != nil {
 		fmt.Println(err)
 	}
