@@ -28,7 +28,7 @@ func MessageReceived(event Event, opts MessageOpts, msg ReceivedMessage) {
 		fmt.Println(err)
 		return
 	}
-	resp, err := mess.SendSimpleMessage(opts.Sender.ID, fmt.Sprintf("你好,%s%s,%s", profile.FirstName, profile.LastName, msg.Text))
+	resp, err := mess.SendSimpleMessage(opts.Sender.ID, fmt.Sprintf("你好,%s", profile.LastName, msg.Text))
 	if err != nil {
 		fmt.Println(err)
 	}
