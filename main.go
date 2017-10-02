@@ -23,7 +23,6 @@ func main() {
 //MessageReceived :Callback to handle when message received.
 func MessageReceived(event Event, opts MessageOpts, msg ReceivedMessage) {
 	// log.Println("event:", event, " opt:", opts, " msg:", msg)
-	profile, err := mess.GetProfile(opts.Sender.ID)
 	if err != nil {
 		fmt.Println(err)
 		return
