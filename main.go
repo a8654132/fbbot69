@@ -18,16 +18,7 @@ func main() {
 	mess.MessageReceived = MessageReceived
 	http.HandleFunc("/webhook", mess.Handler)
 
-	binary, _ := Redis_Get(mac)
-	user := new(USER_MAC)
-	json.Unmarshal(binary,&user)
-	onlyonecontent := user.USER[1].CONTENT
-
-	for i:=0 ; i<5 ; i++ {
-  	mess.SendSimpleMessage("1460870680701162", fmt.Sprintf("第%d次主動傳送訊息",i+1))
-	}
-
-	mess.SendSimpleMessage("1460870680701162", fmt.Sprintf(onlyonecontent))
+  mess.SendSimpleMessage("1460870680701162", fmt.Sprintf("主動傳送訊息!"))
 
 	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
