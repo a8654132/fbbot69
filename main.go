@@ -23,7 +23,7 @@ func main() {
 	json.Unmarshal(binary,&user)
 	onlyonecontent := user.USER[1].CONTENT
 
-	for i=0 ; i<5 ; i++ {
+	for i:=0 ; i<5 ; i++ {
   	mess.SendSimpleMessage("1460870680701162", fmt.Sprintf("第%d次主動傳送訊息",i+1))
 	}
 
